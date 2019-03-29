@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { AlertController, LoadingController, Loading } from 'ionic-angular';
 
+@IonicPage()
 
 @Component({
   selector: 'page-home',
