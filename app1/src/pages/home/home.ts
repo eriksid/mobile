@@ -29,7 +29,7 @@ export class HomePage {
 
     ret.then(data => {
       this.loading.dismiss();
-      if(data.token.length) {
+      if("token" in data) {
         console.log('Logado com sucesso!');
          this.navCtrl.push(OnePage);
       }
