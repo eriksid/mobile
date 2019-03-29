@@ -1,4 +1,3 @@
-import { OnePage } from './../one/one';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
@@ -30,7 +29,7 @@ export class HomePage {
       this.loading.dismiss();
       if("token" in data) {
         console.log('Logado com sucesso!');
-         this.navCtrl.push(OnePage);
+         this.navCtrl.push('OnePage');
       }
     }).catch(erro =>{
       this.erro_msg = erro.AditionalInfo;
@@ -69,7 +68,7 @@ export class HomePage {
   }
     showAlert() {
     const alert = this.alertCtrl.create({
-      title:   'Atenção',
+      title:   'Atenção!',
       subTitle: this.erro_msg,
       buttons: ['OK']
     });
@@ -77,7 +76,7 @@ export class HomePage {
   }
   showLoading() {
     this.loading = this.loadingCtrl.create({
-      content: 'Por Favor Aguarde...',
+      content: 'Por favor aguarde...',
       dismissOnPageChange: true
     });
     this.loading.present();

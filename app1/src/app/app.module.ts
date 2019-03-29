@@ -12,9 +12,8 @@ import { UtilProvider } from '../providers/util/util';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
-    OnePage
+    MyApp
+
   ],
   imports: [
     BrowserModule,
@@ -23,9 +22,7 @@ import { UtilProvider } from '../providers/util/util';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage,
-    OnePage
+    MyApp
   ],
   providers: [
     StatusBar,
