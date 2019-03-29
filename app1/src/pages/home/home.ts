@@ -2,7 +2,6 @@ import { OnePage } from './../one/one';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
-import { getLocaleCurrencyName } from '@angular/common';
 import { AlertController, LoadingController, Loading } from 'ionic-angular';
 
 
