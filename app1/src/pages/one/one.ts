@@ -16,6 +16,8 @@ import { UtilProvider } from '../../providers/util/util';
 })
 export class OnePage {
   itens: any;
+  qtd_sabores: number;
+  sabores: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private util :UtilProvider) {
   }
@@ -28,9 +30,11 @@ export class OnePage {
            this.itens = data;
          });
   }
-  getSabores (id:number) {
-    const ret = this.util.getSabores(id);
+  getSabores (item:any) {
+    this.qtd_sabores = item.quantidade_sabores;
+    const ret = this.util.getSabores(item.id);
          ret.then( data =>{
+           this.sabores = data;
            console.log(data);
          //this.navCtrl.push(O);
 
