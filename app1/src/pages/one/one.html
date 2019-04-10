@@ -19,11 +19,12 @@
     <ion-radio (ionSelect)="getSabores(item)"></ion-radio>
   </ion-item>
 </ion-list>
-  <ion-item *ngFor="let sabor of sabores; let i = index" (click)="getSabores(item.id)">
+  <ion-item *ngFor="let sabor of sabores; let i = index">
     <ion-label >
       {{sabor.sabor}} - R${{sabor.preco}},00
     </ion-label>
-    <ion-checkbox></ion-checkbox>
+    <ion-checkbox (ionChange) ="calc(i)" [(ngModel)]="sabor.checked" [disabled]="checkLimit(i)"
+></ion-checkbox>
   </ion-item>
 
 

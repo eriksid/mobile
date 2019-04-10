@@ -16,8 +16,9 @@ import { UtilProvider } from '../../providers/util/util';
 })
 export class OnePage {
   itens: any;
-  qtd_sabores: number;
   sabores: any;
+  qtd_sabores: number;
+  qtd_checked: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private util :UtilProvider) {
   }
@@ -34,12 +35,24 @@ export class OnePage {
     this.qtd_sabores = item.quantidade_sabores;
     const ret = this.util.getSabores(item.id);
          ret.then( data =>{
+           this.qtd_checked = 0;
            this.sabores = data;
            console.log(data);
          //this.navCtrl.push(O);
 
          });
 
+  }
+  calc (i) {
+    console.log(this.sabores[i].checked);
+    if(this.sabores[i].checked)
+      this.qtd_checked++;
+    else
+      this.qtd_checked--;
+  }
+  checkLimit (i) {
+    if(this.qtd_checked == this.qtd_sabores)
+      return !this.sabores[i].checked;
   }
 
 }
